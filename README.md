@@ -733,3 +733,324 @@
 
 </body>
 </html>
+<button id="lang-toggle" class="btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">
+  🇩🇪 Deutsch
+</button>
+<div class="nav-links">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#booking">Booking</a>
+  <button id="lang-toggle" class="btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">
+    🇩🇪 Deutsch
+  </button>
+</div>
+<script>
+  (function() {
+    let currentLang = 'en';
+
+    const translations = {
+      en: {
+        // Navigation
+        navAbout: 'About',
+        navServices: 'Services',
+        navGallery: 'Gallery',
+        navBooking: 'Booking',
+        // Hero
+        heroTag: 'Est. 2025',
+        heroTitle: 'The Gilded Blade',
+        heroSub: 'Traditional craftsmanship meets modern precision. Experience the finest grooming in an atmosphere of understated luxury.',
+        heroBtn1: 'Book Appointment',
+        heroBtn2: 'Explore Services',
+        heroScroll: 'Scroll',
+        // About
+        aboutLabel: 'Our Legacy',
+        aboutTitle: 'Where <em>craft</em> becomes ritual',
+        aboutText: 'Founded by master barbers with decades of experience, The Gilded Blade revives the timeless art of gentlemen\'s grooming. Every cut, every shave, every detail — performed with unwavering precision and respect for tradition.',
+        stat1: 'Years of Excellence',
+        stat2: 'Master Barbers',
+        stat3: 'Happy Guests',
+        // Services
+        servicesLabel: 'Services',
+        servicesTitle: 'Precision <em>grooming</em>',
+        service1Name: 'Signature Cut',
+        service1Desc: 'Precision scissor work and tailored styling',
+        service1Price: '€45',
+        service2Name: 'Hot Towel Shave',
+        service2Desc: 'Traditional straight razor shave with steam towels',
+        service2Price: '€35',
+        service3Name: 'King\'s Groom',
+        service3Desc: 'Cut, shave, and premium treatment',
+        service3Price: '€70',
+        service4Name: 'Beard Sculpt',
+        service4Desc: 'Shape, trim, and hot oil massage',
+        service4Price: '€30',
+        // Gallery
+        galleryLabel: 'Portfolio',
+        galleryTitle: 'Our <em>work</em>',
+        galleryItem1: 'Classic Cut',
+        galleryItem2: 'Hot Towel',
+        galleryItem3: 'Beard Sculpt',
+        galleryItem4: 'Razor Finish',
+        galleryItem5: 'Style Studio',
+        // Booking
+        bookingLabel: 'Reserve',
+        bookingTitle: 'Secure your <em>chair</em>',
+        formName: 'Full Name',
+        formEmail: 'Email',
+        formPhone: 'Phone',
+        formService: 'Select Service',
+        formDate: 'Preferred Date',
+        formTime: 'Preferred Time',
+        formMessage: 'Special Requests',
+        formSubmit: 'Request Appointment',
+        serviceOption1: 'Signature Cut',
+        serviceOption2: 'Hot Towel Shave',
+        serviceOption3: 'King\'s Groom',
+        serviceOption4: 'Beard Sculpt',
+        // Hours
+        hoursTitle: 'Opening Hours',
+        monday: 'Monday',
+        tuesday: 'Tuesday',
+        wednesday: 'Wednesday',
+        thursday: 'Thursday',
+        friday: 'Friday',
+        saturday: 'Saturday',
+        sunday: 'Sunday',
+        closed: 'Closed',
+        // Contact
+        contactLabel: 'Visit Us',
+        contactAddress: '47 Gilded Lane, Berlin',
+        contactPhone: '+49 30 123 45678',
+        contactEmail: 'hello@gildedblade.com',
+        // Footer
+        footerRights: '© 2025 The Gilded Blade. All rights reserved.',
+        footerPrivacy: 'Privacy',
+        footerImprint: 'Imprint'
+      },
+      de: {
+        // Navigation
+        navAbout: 'Über uns',
+        navServices: 'Leistungen',
+        navGallery: 'Galerie',
+        navBooking: 'Buchung',
+        // Hero
+        heroTag: 'Gegr. 2025',
+        heroTitle: 'Die Vergoldete Klinge',
+        heroSub: 'Traditionelles Handwerk trifft moderne Präzision. Erleben Sie die feinste Körperpflege in einer Atmosphäre zurückhaltenden Luxus.',
+        heroBtn1: 'Termin buchen',
+        heroBtn2: 'Leistungen entdecken',
+        heroScroll: 'Scrollen',
+        // About
+        aboutLabel: 'Unser Erbe',
+        aboutTitle: 'Wo <em>Handwerk</em> zur Zeremonie wird',
+        aboutText: 'Gegründet von Meisterfriseuren mit jahrzehntelanger Erfahrung, belebt Die Vergoldete Klinge die zeitlose Kunst der Herrenpflege wieder. Jeder Schnitt, jede Rasur, jedes Detail – mit unerschütterlicher Präzision und Respekt vor der Tradition.',
+        stat1: 'Jahre Exzellenz',
+        stat2: 'Meisterfriseure',
+        stat3: 'Zufriedene Gäste',
+        // Services
+        servicesLabel: 'Leistungen',
+        servicesTitle: 'Präzisions-<em>pflege</em>',
+        service1Name: 'Signature Schnitt',
+        service1Desc: 'Präzise Scherenarbeit & individuelles Styling',
+        service1Price: '45€',
+        service2Name: 'Heißrasur',
+        service2Desc: 'Traditionelle Rasiermesserrasur mit Dampftüchern',
+        service2Price: '35€',
+        service3Name: 'Königsrasur',
+        service3Desc: 'Schnitt, Rasur & Premium-Behandlung',
+        service3Price: '70€',
+        service4Name: 'Bartskulptur',
+        service4Desc: 'Formung, Trimmen & Heißöl-Massage',
+        service4Price: '30€',
+        // Gallery
+        galleryLabel: 'Portfolio',
+        galleryTitle: 'Unsere <em>Arbeit</em>',
+        galleryItem1: 'Klassischer Schnitt',
+        galleryItem2: 'Heißrasur',
+        galleryItem3: 'Bartskulptur',
+        galleryItem4: 'Rasur-Finish',
+        galleryItem5: 'Style Studio',
+        // Booking
+        bookingLabel: 'Reservieren',
+        bookingTitle: 'Sichern Sie sich Ihren <em>Platz</em>',
+        formName: 'Vollständiger Name',
+        formEmail: 'E-Mail',
+        formPhone: 'Telefon',
+        formService: 'Leistung wählen',
+        formDate: 'Wunschtermin',
+        formTime: 'Uhrzeit',
+        formMessage: 'Besondere Wünsche',
+        formSubmit: 'Terminanfrage senden',
+        serviceOption1: 'Signature Schnitt',
+        serviceOption2: 'Heißrasur',
+        serviceOption3: 'Königsrasur',
+        serviceOption4: 'Bartskulptur',
+        // Hours
+        hoursTitle: 'Öffnungszeiten',
+        monday: 'Montag',
+        tuesday: 'Dienstag',
+        wednesday: 'Mittwoch',
+        thursday: 'Donnerstag',
+        friday: 'Freitag',
+        saturday: 'Samstag',
+        sunday: 'Sonntag',
+        closed: 'Geschlossen',
+        // Contact
+        contactLabel: 'Besuchen Sie uns',
+        contactAddress: 'Gilded Lane 47, Berlin',
+        contactPhone: '+49 30 123 45678',
+        contactEmail: 'hallo@gildedblade.com',
+        // Footer
+        footerRights: '© 2025 Die Vergoldete Klinge. Alle Rechte vorbehalten.',
+        footerPrivacy: 'Datenschutz',
+        footerImprint: 'Impressum'
+      }
+    };
+
+    function translatePage(lang) {
+      const t = translations[lang];
+
+      // Navigation
+      document.querySelectorAll('.nav-links a').forEach((link, idx) => {
+        const href = link.getAttribute('href');
+        if (href === '#about') link.textContent = t.navAbout;
+        if (href === '#services') link.textContent = t.navServices;
+        if (href === '#gallery') link.textContent = t.navGallery;
+        if (href === '#booking') link.textContent = t.navBooking;
+      });
+
+      // Hero
+      const heroTag = document.querySelector('.hero-tag');
+      if (heroTag) heroTag.textContent = t.heroTag;
+      const heroTitle = document.querySelector('.hero-title');
+      if (heroTitle) heroTitle.innerHTML = t.heroTitle;
+      const heroSub = document.querySelector('.hero-sub');
+      if (heroSub) heroSub.textContent = t.heroSub;
+      const heroBtns = document.querySelectorAll('.hero-btns .btn-primary, .hero-btns .btn-outline');
+      if (heroBtns[0]) heroBtns[0].textContent = t.heroBtn1;
+      if (heroBtns[1]) heroBtns[1].textContent = t.heroBtn2;
+      const heroDividerSpan = document.querySelector('.hero-divider span');
+      if (heroDividerSpan) heroDividerSpan.textContent = t.heroScroll;
+
+      // About
+      const aboutLabel = document.querySelector('#about .section-label');
+      if (aboutLabel) aboutLabel.textContent = t.aboutLabel;
+      const aboutTitle = document.querySelector('#about .section-title');
+      if (aboutTitle) aboutTitle.innerHTML = t.aboutTitle;
+      const aboutText = document.querySelector('#about .about-text p');
+      if (aboutText) aboutText.textContent = t.aboutText;
+      const statLabels = document.querySelectorAll('.about-stats .stat-label');
+      if (statLabels[0]) statLabels[0].textContent = t.stat1;
+      if (statLabels[1]) statLabels[1].textContent = t.stat2;
+      if (statLabels[2]) statLabels[2].textContent = t.stat3;
+
+      // Services
+      const servicesLabel = document.querySelector('#services .section-label');
+      if (servicesLabel) servicesLabel.textContent = t.servicesLabel;
+      const servicesTitle = document.querySelector('#services .section-title');
+      if (servicesTitle) servicesTitle.innerHTML = t.servicesTitle;
+      const serviceNames = document.querySelectorAll('.service-name');
+      if (serviceNames[0]) serviceNames[0].textContent = t.service1Name;
+      if (serviceNames[1]) serviceNames[1].textContent = t.service2Name;
+      if (serviceNames[2]) serviceNames[2].textContent = t.service3Name;
+      if (serviceNames[3]) serviceNames[3].textContent = t.service4Name;
+      const serviceDescs = document.querySelectorAll('.service-desc');
+      if (serviceDescs[0]) serviceDescs[0].textContent = t.service1Desc;
+      if (serviceDescs[1]) serviceDescs[1].textContent = t.service2Desc;
+      if (serviceDescs[2]) serviceDescs[2].textContent = t.service3Desc;
+      if (serviceDescs[3]) serviceDescs[3].textContent = t.service4Desc;
+      const servicePrices = document.querySelectorAll('.service-price');
+      if (servicePrices[0]) servicePrices[0].textContent = t.service1Price;
+      if (servicePrices[1]) servicePrices[1].textContent = t.service2Price;
+      if (servicePrices[2]) servicePrices[2].textContent = t.service3Price;
+      if (servicePrices[3]) servicePrices[3].textContent = t.service4Price;
+
+      // Gallery
+      const galleryLabel = document.querySelector('#gallery .section-label');
+      if (galleryLabel) galleryLabel.textContent = t.galleryLabel;
+      const galleryTitle = document.querySelector('#gallery .section-title');
+      if (galleryTitle) galleryTitle.innerHTML = t.galleryTitle;
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      if (galleryItems[0]) galleryItems[0].textContent = t.galleryItem1;
+      if (galleryItems[1]) galleryItems[1].textContent = t.galleryItem2;
+      if (galleryItems[2]) galleryItems[2].textContent = t.galleryItem3;
+      if (galleryItems[3]) galleryItems[3].textContent = t.galleryItem4;
+      if (galleryItems[4]) galleryItems[4].textContent = t.galleryItem5;
+
+      // Booking
+      const bookingLabel = document.querySelector('#booking .section-label');
+      if (bookingLabel) bookingLabel.textContent = t.bookingLabel;
+      const bookingTitle = document.querySelector('#booking .section-title');
+      if (bookingTitle) bookingTitle.innerHTML = t.bookingTitle;
+      const formLabels = document.querySelectorAll('#booking label');
+      if (formLabels[0]) formLabels[0].textContent = t.formName;
+      if (formLabels[1]) formLabels[1].textContent = t.formEmail;
+      if (formLabels[2]) formLabels[2].textContent = t.formPhone;
+      if (formLabels[3]) formLabels[3].textContent = t.formService;
+      if (formLabels[4]) formLabels[4].textContent = t.formDate;
+      if (formLabels[5]) formLabels[5].textContent = t.formTime;
+      if (formLabels[6]) formLabels[6].textContent = t.formMessage;
+      const submitBtn = document.querySelector('#booking .btn-primary');
+      if (submitBtn) submitBtn.textContent = t.formSubmit;
+      const serviceOptions = document.querySelectorAll('#service-select option');
+      if (serviceOptions[0]) serviceOptions[0].textContent = t.serviceOption1;
+      if (serviceOptions[1]) serviceOptions[1].textContent = t.serviceOption2;
+      if (serviceOptions[2]) serviceOptions[2].textContent = t.serviceOption3;
+      if (serviceOptions[3]) serviceOptions[3].textContent = t.serviceOption4;
+
+      // Hours
+      const hoursRows = document.querySelectorAll('.hours-row');
+      if (hoursRows[0]) hoursRows[0].querySelector('.day').textContent = t.monday;
+      if (hoursRows[1]) hoursRows[1].querySelector('.day').textContent = t.tuesday;
+      if (hoursRows[2]) hoursRows[2].querySelector('.day').textContent = t.wednesday;
+      if (hoursRows[3]) hoursRows[3].querySelector('.day').textContent = t.thursday;
+      if (hoursRows[4]) hoursRows[4].querySelector('.day').textContent = t.friday;
+      if (hoursRows[5]) hoursRows[5].querySelector('.day').textContent = t.saturday;
+      if (hoursRows[6]) hoursRows[6].querySelector('.day').textContent = t.sunday;
+      hoursRows.forEach(row => {
+        const timeSpan = row.querySelector('span:last-child');
+        if (timeSpan && timeSpan.textContent.includes('Closed') || timeSpan.textContent.includes('Geschlossen')) {
+          timeSpan.textContent = t.closed;
+        }
+      });
+
+      // Contact
+      const contactLabels = document.querySelectorAll('.contact-label');
+      if (contactLabels[0]) contactLabels[0].textContent = t.contactLabel;
+      const contactValues = document.querySelectorAll('.contact-value');
+      if (contactValues[0]) contactValues[0].textContent = t.contactAddress;
+      if (contactValues[1]) contactValues[1].textContent = t.contactPhone;
+      if (contactValues[2]) contactValues[2].textContent = t.contactEmail;
+
+      // Footer
+      const footerRights = document.querySelector('footer p:first-child');
+      if (footerRights) footerRights.textContent = t.footerRights;
+      const footerLinks = document.querySelectorAll('.footer-links a');
+      if (footerLinks[0]) footerLinks[0].textContent = t.footerPrivacy;
+      if (footerLinks[1]) footerLinks[1].textContent = t.footerImprint;
+
+      // Update button text
+      const toggleBtn = document.getElementById('lang-toggle');
+      if (toggleBtn) {
+        toggleBtn.textContent = lang === 'en' ? '🇩🇪 Deutsch' : '🇬🇧 English';
+      }
+    }
+
+    // Attach event listener
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('lang-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          currentLang = currentLang === 'en' ? 'de' : 'en';
+          translatePage(currentLang);
+        });
+      }
+    });
+  })();
+</script>
+## 🌐 Language Toggle
+
+The website includes a built-in English/German toggle button.  
+Click **🇩🇪 Deutsch** to switch to German, click again to return to English.  
+No page reload required – instant translation of all content.
