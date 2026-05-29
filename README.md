@@ -1,5 +1,3 @@
-[saloon.html](https://github.com/user-attachments/files/28404185/saloon.html)
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
